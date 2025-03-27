@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+     @keyframes anim {
+    from { filter: blur(10px); opacity: 0; }
+    to { filter: blur(0px); opacity: 1; }
+}
+
+.headline {
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+    margin-top: 20%;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    margin-left: 5%;
+}
+
+.headline img {
+    transition: .5s;
+    filter: brightness(0);
+    animation: anim 2s ease-out 1;
+    will-change: filter, transform;
+}
+
+.headline img:hover {
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+.fulldiv .headline:hover ~ * {
+    filter: brightness(1);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.fulldiv .headline:hover ~ * ~ * {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+       .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Make video cover the whole screen */
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: anim 2s 1;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+    
+    </style>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-black" id="bdy1">
+  <div class="fulldiv">  
+    <div class="headline">
+        <img class="items-center rounded-2xl w-40 h-72 p-2" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+    <div class="headline">
+        <img class="rounded-2xl w-40 h-72 p-1" src="https://i.pinimg.com/originals/2d/eb/08/2deb08a5e69b60718dd2ab59938ca46f.png">
+    </div>
+  </div>  
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+     <script src="main.js"></script>
+     <div class="video-container">
+        <video autoplay loop muted>
+            <source src="https://videos.pexels.com/video-files/856309/856309-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+     <audio id="audi" src="magical-twinkle-242245.mp3"></audio>
+</body>
+</html>
